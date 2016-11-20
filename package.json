@@ -1,0 +1,35 @@
+{
+  "name": "opentime-webpage-sdk",
+  "version": "1.0.0",
+  "description": "OpenTime Angular 2 SDK for WebPages",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenTimeApp/OpenTimeWebPageSDK.git"
+  },
+  "keywords": [
+    "opentime",
+    "sdk",
+    "webpage"
+  ],
+  "author": "OpenTime™ Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenTimeApp/OpenTimeWebPageSDK/issues"
+  },
+  "homepage": "https://github.com/OpenTimeApp/OpenTimeWebPageSDK#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1"
+  }
+}
