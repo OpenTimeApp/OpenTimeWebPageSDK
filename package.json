@@ -8,8 +8,7 @@
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "pree2e": "webdriver-manager update"
   },
   "repository": {
     "type": "git",

@@ -13,6 +13,6 @@ export class OTWPGroupMemberService {
 
     setTimeout( () => {
       callback(responseData);
-    }, 1500);
+    });
   }
 }
