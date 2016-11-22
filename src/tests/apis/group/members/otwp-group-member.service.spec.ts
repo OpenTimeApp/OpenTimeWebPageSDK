@@ -11,7 +11,7 @@ describe('Class: OTWPGroupMemberService', () => {
   let service: OTWPGroupMemberService;
 
   beforeEach(() => {
-    service = new OTWPGroupMemberService;
+    service = new OTWPGroupMemberService();
   });
 
   describe('Method: getWithAvailability', () => {
