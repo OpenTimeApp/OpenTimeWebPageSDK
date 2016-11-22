@@ -1,4 +1,4 @@
-//Changed "moduleResolution" option from "node" to "classic" for obvious path specification
+//Change "moduleResolution" option from "node" to "classic" for obvious path specification
 {
   "compilerOptions": {
     "baseUrl": "",
