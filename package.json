@@ -1,10 +1,15 @@
 {
   "name": "opentime-webpage-sdk",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "OpenTime Angular 2 SDK for WebPages",
-  "main": "main.js",
+  "angular-cli": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ng serve",
+    "lint": "tslint \"src/**/*.ts\"",
+    "test": "ng test",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
   },
   "repository": {
     "type": "git",
@@ -16,11 +21,41 @@
     "webpage"
   ],
   "author": "OpenTime™ Inc.",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenTimeApp/OpenTimeWebPageSDK/issues"
   },
   "homepage": "https://github.com/OpenTimeApp/OpenTimeWebPageSDK#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^2.1.0",
+    "@angular/compiler": "^2.1.0",
+    "@angular/core": "^2.1.0",
+    "@angular/forms": "^2.1.0",
+    "@angular/http": "^2.1.0",
+    "@angular/platform-browser": "^2.1.0",
+    "@angular/platform-browser-dynamic": "^2.1.0",
+    "@angular/router": "^3.1.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^2.1.0",
+    "@types/jasmine": "^2.2.30",
+    "@types/node": "^6.0.42",
+    "angular-cli": "1.0.0-beta.20-4",
+    "codelyzer": "~1.0.0-beta.3",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "~2.0.3",
+    "webdriver-manager": "10.2.5"
+  }
 }
