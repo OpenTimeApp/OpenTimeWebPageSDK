@@ -15,12 +15,12 @@ export class OTWPGroupMembersWithAvailabilityResponse extends OTWPResponse {
     return this._members;
   }
 
-  private _getDeserializeMembers(rawMembers: any) : Array<OTWPDeserializedGroupMemberAvailability> {
-      let deserializedMembers = [];
-      for(let i =0; i < rawMembers.length; i++){
-           let deserializedMember = new OTWPDeserializedGroupMemberAvailability(rawMembers[i]);
-           deserializedMembers.push(deserializedMember);
-      }
-      return deserializedMembers;
+  private _getDeserializeMembers(rawMembers: any): Array<OTWPDeserializedGroupMemberAvailability> {
+    let deserializedMembers = [];
+    for (let i = 0; i < rawMembers.length; i++) {
+      let deserializedMember = new OTWPDeserializedGroupMemberAvailability(rawMembers[i]);
+      deserializedMembers.push(deserializedMember);
+    }
+    return deserializedMembers;
   }
 }
