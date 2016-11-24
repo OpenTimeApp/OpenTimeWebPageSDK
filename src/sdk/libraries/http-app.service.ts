@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
-import {OpenTimeWebPageSDK} from "./api/opentime-webpage-sdk";
+import {OpenTimeWebPageSDK} from "../api/opentime-webpage-sdk";
 
 @Injectable()
 
-export class OTWPHttpService {
+export class HttpAppService {
 
     public constructor() {}
 
@@ -35,25 +35,14 @@ export class OTWPHttpService {
                         data: null
                     };
 
+                    console.error("The server did not return a valid JSON response for url: " + url);
+
                     callback(errorMessage);
                 }
             }
         };
 
         this._http.send(data);
-    }
-
-    public getAPIResponse(api: string, apiMethod, httpMethod: string, data: any, callback: (response) => void) {
-
-        let key = OpenTimeWebPageSDK.getService().getAPIKey();
-
-        if(key !== null && key !== ''){
-            this.setRequestHeader('API_KEY', OpenTimeWebPageSDK.getService().getAPIKey());
-        }
-
-        let url = OpenTimeWebPageSDK.getService().getEndpoint(api, apiMethod);
-
-        this.getResponse(url, httpMethod, data, callback);
     }
 
     public setRequestHeader(header: string, value: string) {

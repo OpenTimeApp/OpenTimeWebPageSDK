@@ -1,11 +1,11 @@
-import { OTWPHttpService } from "../sdk/otwp-http.service";
+import {HttpAppService} from "../../sdk/libraries/http-app.service";
 
 let httpService;
 
-describe('Service: OTWPHttpService', () => {
+describe('Service: HttpAppService', () => {
 
   beforeEach(() => {
-    httpService = new OTWPHttpService();
+    httpService = new HttpAppService();
   });
 
   describe("Method: getDoctors", () => {
