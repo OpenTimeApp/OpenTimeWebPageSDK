@@ -3,13 +3,17 @@ import { OTWPHttpService } from "../sdk/otwp-http.service";
 let httpService;
 
 describe('Service: OTWPHttpService', () => {
+
   beforeEach(() => {
     httpService = new OTWPHttpService();
   });
 
   describe("Method: getDoctors", () => {
+
     it("should return doctors", (done) => {
-      httpService.getDoctors((data) => {
+
+      httpService.getResponse('http://opentimeapp.com/doctors.php', 'GET', {'page':1, 'rows': 5 }, (data) => {
+
         expect(data.length).toEqual(5);
 
         let doctor1 = data[0];
@@ -24,6 +28,7 @@ describe('Service: OTWPHttpService', () => {
           expect(doctor.phone).toBeTruthy();
           expect(doctor.email).toBeTruthy();
         });
+
         done();
       });
     })
