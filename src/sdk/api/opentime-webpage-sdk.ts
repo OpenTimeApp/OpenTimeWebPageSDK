@@ -25,7 +25,7 @@ export class OpenTimeWebPageSDK {
   }
 
   public getEndpoint(api: string, method: string): string {
-    let endpoint: string = this._server + OTWPConstant.API_BASE_URL + '/' + api;
+    let endpoint: string = this._server + '/' + api + OTWPConstant.API_BASE_URL;
     if (method !== '') {
       endpoint += '/' + method;
     }

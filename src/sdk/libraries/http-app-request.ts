@@ -1,15 +1,10 @@
-import {Injectable} from "@angular/core";
-import {OpenTimeWebPageSDK} from "../api/opentime-webpage-sdk";
-
-@Injectable()
-
-export class HttpAppService {
+export class HttpAppRequest {
 
     public constructor() {}
 
     private _http = new XMLHttpRequest();
 
-    public getResponse(url: string, method: string, data: any, callback: (response) => void) {
+    public getResponse(url: string, method: string, data: any, callback: (responseObject) => void) {
 
         let finalUrl = url;
 
@@ -18,7 +13,15 @@ export class HttpAppService {
             finalUrl += '?' + Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join('&');
         }
 
+        let queryString = '';
+
         this._http.open(method, finalUrl, true);
+
+        if(method === 'POST') {
+            queryString = Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join('&');
+
+            this._http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        }
 
         this._http.onreadystatechange = () => {
             if (this._http.readyState === XMLHttpRequest.DONE) {
@@ -36,13 +39,15 @@ export class HttpAppService {
                     };
 
                     console.error("The server did not return a valid JSON response for url: " + url);
+                    console.error("Response: " + this._http.responseText);
 
                     callback(errorMessage);
                 }
             }
         };
 
-        this._http.send(data);
+        console.log(queryString);
+        this._http.send(queryString);
     }
 
     public setRequestHeader(header: string, value: string) {

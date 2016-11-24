@@ -3,16 +3,25 @@ import { OTWPGroupMembersWithAvailabilityResponse } from './get-with-availabilit
 
 @Injectable()
 export class OTWPGroupMemberService {
-  getWithAvailability(groupID: number, callback: (responseData: string) => void): void {
-    let rawData = {
-      "success": false, "message": "hello", "data": []
-    };
 
-    let responseData:string = 'fakeData';
-    // let responseData = new OTWPGroupMembersWithAvailabilityResponse(rawData);
+  private static readonly API = 'group';
 
-    setTimeout( () => {
-      callback(responseData);
-    });
+  getWithAvailability(groupID: number, callback: (response: OTWPGroupMembersWithAvailabilityResponse) => void): void {
+      // let request = new OTWPRequest();
+      // request.getResponse(
+      //     OTWPGroupMemberService.API,
+      //     'getMembersWithAvailability',
+      //     'POST', {
+      //         group_id:groupID,
+      //         sort: 'asc',
+      //         query: '',
+      //         page: ''
+      //     },
+      //     (responseObject) => {
+      //         let response = new OTWPGroupMembersWithAvailabilityResponse(responseObject);
+      //         callback(response);
+      //     }
+      // );
+      callback(new OTWPGroupMembersWithAvailabilityResponse({success: false, message: '', data: []}));
   }
 }
