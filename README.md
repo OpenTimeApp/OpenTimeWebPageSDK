@@ -1,7 +1,7 @@
 # README #
 
 ### What is this repository for? ###
-This is an Angular2 SDK for the OpenTime™ RESTful API
+This is an Angular2 SDK for the OpenTime™ Web Page API
 http://app.opentimeapp.com/docs/
 
 #### Quick Summary ####
