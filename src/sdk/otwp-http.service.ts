@@ -22,7 +22,21 @@ export class OTWPHttpService {
 
         this._http.onreadystatechange = () => {
             if (this._http.readyState === XMLHttpRequest.DONE) {
-                callback(JSON.parse(this._http.responseText));
+
+                try {
+                    let jsonData = JSON.parse(this._http.responseText);
+
+                    callback(jsonData);
+                } catch (e) {
+
+                    let errorMessage = {
+                        success: false,
+                        message: "The server did not return a valid JSON response",
+                        data: null
+                    };
+
+                    callback(errorMessage);
+                }
             }
         };
 
