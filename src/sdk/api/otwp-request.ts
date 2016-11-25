@@ -14,7 +14,7 @@ export class OTWPRequest {
         let key = OpenTimeWebPageSDK.getService().getAPIKey();
 
         if(key !== null && key !== ''){
-            //this._request.setRequestHeader('API_KEY', OpenTimeWebPageSDK.getService().getAPIKey());
+            this._request.setRequestHeader('API_KEY', OpenTimeWebPageSDK.getService().getAPIKey());
         }
 
         let url = OpenTimeWebPageSDK.getService().getEndpoint(api, apiMethod);
