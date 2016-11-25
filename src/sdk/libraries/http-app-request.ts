@@ -2,9 +2,13 @@ import * as $ from 'jquery';
 
 export class HttpAppRequest {
 
-    public constructor() {}
+    private _headers: Object;
+    private _async;
 
-    private _headers: Object = {};
+    public constructor() {
+        this._async = true;
+        this._headers = {};
+    }
 
     public getResponse(url: string, method: string, data: any, callback: (responseObject) => void) {
 
@@ -13,14 +17,21 @@ export class HttpAppRequest {
             data: data,
             cache: false,
             headers: this._headers,
+            async: this._async,
+            dataType: 'json'
         }).done((response) => {
             callback(response);
         }).fail((jqXHR, errorText) => {
+            console.log(jqXHR.responseText);
             callback({success: false, message: errorText, data: null});
         });
     }
 
     public setRequestHeader(header: string, value: string) {
         this._headers[header] = value;
+    }
+
+    public setAsync(async){
+        this._async = async;
     }
 }

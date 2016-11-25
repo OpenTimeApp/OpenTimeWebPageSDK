@@ -32,6 +32,10 @@ export class OpenTimeWebPageSDK {
     return endpoint;
   }
 
+  public getServer() : string{
+    return this._server;
+  }
+
   public getAPIKey() : string {
     return this._apiKey;
   }
