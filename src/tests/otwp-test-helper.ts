@@ -11,7 +11,6 @@ export class TestHelper {
         let request = new HttpAppRequest();
         let script = encodeURIComponent(scripts.join(','));
 
-        request.setAsync(false);
         request.getResponse(
             OpenTimeWebPageSDK.getService().getServer() + '/restore/restore.php',
             'GET',

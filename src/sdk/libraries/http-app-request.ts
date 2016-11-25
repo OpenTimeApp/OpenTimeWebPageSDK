@@ -3,10 +3,8 @@ import * as $ from 'jquery';
 export class HttpAppRequest {
 
     private _headers: Object;
-    private _async;
 
     public constructor() {
-        this._async = true;
         this._headers = {};
     }
 
@@ -17,7 +15,6 @@ export class HttpAppRequest {
             data: data,
             cache: false,
             headers: this._headers,
-            async: this._async,
             dataType: 'json'
         }).done((response) => {
             callback(response);
@@ -29,9 +26,5 @@ export class HttpAppRequest {
 
     public setRequestHeader(header: string, value: string) {
         this._headers[header] = value;
-    }
-
-    public setAsync(async){
-        this._async = async;
     }
 }
