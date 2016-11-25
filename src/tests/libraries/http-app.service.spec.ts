@@ -16,18 +16,19 @@ describe('Service: HttpAppRequest', () => {
 
         expect(responseObject.length).toEqual(5);
 
-        let doctor1 = responseObject[0];
+        let [doctor1] = responseObject;
+
         expect(doctor1.name).toBe('Dan Pink, MD.');
         expect(doctor1.address).toBe('1284 Marsh Lane, Sunnyville, CA, 75283');
         expect(doctor1.phone).toBe('407 758-2938');
         expect(doctor1.email).toBe('pinkanddink@pinky.co');
 
-        responseObject.forEach((doctor) => {
+        for (let doctor of responseObject){
           expect(doctor.name).toBeTruthy();
           expect(doctor.address).toBeTruthy();
           expect(doctor.phone).toBeTruthy();
           expect(doctor.email).toBeTruthy();
-        });
+        }
 
         done();
       });
