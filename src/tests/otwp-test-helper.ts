@@ -9,7 +9,7 @@ export class TestHelper {
 
     public static restoreData(scripts: Array<string>, callback: (response) => void) {
         let request = new HttpAppRequest();
-        let script = encodeURIComponent(scripts.join(','));
+        let script = scripts.join(',')
 
         request.getResponse(
             OpenTimeWebPageSDK.getService().getServer() + '/restore/restore.php',

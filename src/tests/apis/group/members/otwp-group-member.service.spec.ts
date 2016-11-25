@@ -7,7 +7,7 @@ describe('Class: OTWPGroupMemberService', () => {
 
     beforeAll((done) => {
         TestHelper.beforeAll();
-        TestHelper.restoreData(['make_groups'], (response) => {
+        TestHelper.restoreData(['make_users','make_groups'], (response) => {
             if (response.success) {
                 done();
             } else {
@@ -30,8 +30,8 @@ describe('Class: OTWPGroupMemberService', () => {
                 let members = response.getMembers();
                 let member1 = members[0];
 
-                expect(member1.getFirstName()).toBe('Josh');
-                expect(member1.getLastName()).toBe('Woodcock');
+                expect(member1.getFirstName()).toBe('Mr');
+                expect(member1.getLastName()).toBe('Tester');
                 expect(member1.getSummary()).toContain('Likes long walks in the desert on a wet day');
                 expect(member1.getProfileImg()).toBe("https://s3-us-west-2.amazonaws.com/test-opentime-profile-images/92444a0191b4ce13dcea205125514526.png");
                 expect(member1.isAvailable()).toBe(false);
