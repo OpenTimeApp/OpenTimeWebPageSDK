@@ -17,11 +17,11 @@ export class OTWPGroupMembersWithAvailabilityResponse extends OTWPResponse {
 
   private _getDeserializeMembers(rawMembers: Array<any>): Array<OTWPDeserializedGroupMemberAvailability> {
     let deserializedMembers = [];
-    // for (let i = 0; i < rawMembers.length; i++) {
-    //   let rawMember = rawMembers[i];
-    //   let deserializedMember = new OTWPDeserializedGroupMemberAvailability(rawMember);
-    //   deserializedMembers.push(deserializedMember);
-    // }
+    for (let i = 0; i < rawMembers.length; i++) {
+      let rawMember = rawMembers[i];
+      let deserializedMember = new OTWPDeserializedGroupMemberAvailability(rawMember);
+      deserializedMembers.push(deserializedMember);
+    }
     return deserializedMembers;
   }
 }
