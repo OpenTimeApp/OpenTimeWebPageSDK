@@ -15,6 +15,6 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
-    "types":["jquery", "jasmine"]
+    "types":["jasmine"]
   }
 }
