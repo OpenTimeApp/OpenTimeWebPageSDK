@@ -1,46 +1,46 @@
-import { OTWPConstant } from "./otwp-constant";
+import {OTWPConstant} from "./otwp-constant";
 export class OpenTimeWebPageSDK {
-  private static _sdk: OpenTimeWebPageSDK = null;
+	private static _sdk: OpenTimeWebPageSDK = null;
 
-  private _apiKey: string;
-  private _inTestMode: boolean;
-  private _server: string;
+	private _apiKey: string;
+	private _inTestMode: boolean;
+	private _server: string;
 
-  constructor(apiKey: string, inTestMode: boolean) {
-    this._apiKey = apiKey;
-    this._inTestMode = inTestMode;
-    this._server = inTestMode ? OTWPConstant.TEST_SERVER : OTWPConstant.LIVE_SERVER;
-  }
+	constructor(apiKey: string, inTestMode: boolean) {
+		this._apiKey = apiKey;
+		this._inTestMode = inTestMode;
+		this._server = inTestMode ? OTWPConstant.TEST_SERVER : OTWPConstant.LIVE_SERVER;
+	}
 
-  public static getService(): OpenTimeWebPageSDK {
-    if (OpenTimeWebPageSDK._sdk !== null) {
-      return OpenTimeWebPageSDK._sdk;
-    } else {
-      throw new Error("OpenTimeWebPageSDK not initialized");
-    }
-  }
+	public static getService(): OpenTimeWebPageSDK {
+		if (OpenTimeWebPageSDK._sdk !== null) {
+			return OpenTimeWebPageSDK._sdk;
+		} else {
+			throw new Error("OpenTimeWebPageSDK not initialized");
+		}
+	}
 
-  public static initService(apiKey: string, inTestMode: boolean = false): void {
-    OpenTimeWebPageSDK._sdk = new OpenTimeWebPageSDK(apiKey, inTestMode);
-  }
+	public static initService(apiKey: string, inTestMode: boolean = false): void {
+		OpenTimeWebPageSDK._sdk = new OpenTimeWebPageSDK(apiKey, inTestMode);
+	}
 
-  public getEndpoint(api: string, method: string): string {
-    let endpoint: string = this._server + '/' + api + OTWPConstant.API_BASE_URL;
-    if (method !== '') {
-      endpoint += '/' + method;
-    }
-    return endpoint;
-  }
+	public getEndpoint(api: string, method: string): string {
+		let endpoint: string = this._server + '/' + api + OTWPConstant.API_BASE_URL;
+		if (method !== '') {
+			endpoint += '/' + method;
+		}
+		return endpoint;
+	}
 
-  public getServer() : string{
-    return this._server;
-  }
+	public getServer(): string {
+		return this._server;
+	}
 
-  public getAPIKey() : string {
-    return this._apiKey;
-  }
+	public getAPIKey(): string {
+		return this._apiKey;
+	}
 
-  public setServer(server: string): void {
-    this._server = server;
-  }
+	public setServer(server: string): void {
+		this._server = server;
+	}
 }
