@@ -15,7 +15,8 @@ You will need to install the node packages and then specify your API key. If you
     
 #### Configuration ####
     npm install
-    git update-index --assume-unchanged src/tests/test-config.ts
+    chmod +x .scripts/install.sh 
+    .scripts/install.sh
 
 #### How to run tests ####
     npm test
