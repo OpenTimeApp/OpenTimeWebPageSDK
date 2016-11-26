@@ -11,4 +11,8 @@ cd ${PROJPATH}
 echo "Ignoring changes for configuration files"
 git update-index --assume-unchanged src/tests/test-config.ts
 
+echo "Installing git hooks"
+cp ${PROJPATH}/.scripts/pre-commit ${PROJPATH}/.git/hooks/pre-commit
+chmod +x ${PROJPATH}/.git/hooks/pre-commit
+
 echo "Installation complete!"
