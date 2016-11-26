@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {OTWPGroupMembersWithAvailabilityIndicatorResponse} from "./get-with-availability/otwp-webpage-sdk-group-members-with-availability-indicator-response";
+import {OTWPGroupMembersWithAvailabilityIndicatorResponse} from "./get-with-availability/otwp-group-members-with-availability-indicator-response";
 import {OTWPRequest} from "../../../api/otwp-request";
 
 @Injectable()
@@ -11,7 +11,7 @@ export class OTWPGroupMemberService {
 		let request = new OTWPRequest();
 		request.getResponse(
 			OTWPGroupMemberService.API,
-			'getMembersWithAvailability',
+			'getMembersWithAvailabilityIndicator',
 			'POST', {
 				group_id: groupID,
 				sort: 'asc',
