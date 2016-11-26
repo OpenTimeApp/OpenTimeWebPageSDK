@@ -10,9 +10,11 @@ describe('Class: OTWPGroupMemberService', () => {
 			if (response.success) {
 				done();
 			} else {
+				//TODO refactor - exit describe and stop and cancel
 				xit(response.message);
 			}
 		});
+		// done();
 	});
 
 	let service: OTWPGroupMemberService;
