@@ -1,6 +1,6 @@
 import {OTWPGroupMemberService} from "../../../../sdk/apis/group/members/otwp-group-member.service";
 import {TestHelper} from "../../../otwp-test-helper";
-import {OTWPGroupMembersWithAvailabilityResponse} from "../../../../sdk/apis/group/members/get-with-availability/otwp-webpage-sdk-group-members-with-availability-response";
+import {OTWPGroupMembersWithAvailabilityIndicatorResponse} from "../../../../sdk/apis/group/members/get-with-availability/otwp-webpage-sdk-group-members-with-availability-indicator-response";
 
 describe('Class: OTWPGroupMemberService', () => {
 
@@ -21,9 +21,9 @@ describe('Class: OTWPGroupMemberService', () => {
 		service = new OTWPGroupMemberService();
 	});
 
-	describe('Method: getWithAvailability', () => {
-		it("Should get list of group members with availability", (done) => {
-			service.getWithAvailability(1, (response: OTWPGroupMembersWithAvailabilityResponse) => {
+	describe('Method: getMembersWithAvailabilityIndicator', () => {
+		it("Should get list of group members with an availability indicator", (done) => {
+			service.getMembersWithAvailabilityIndicator(1, (response: OTWPGroupMembersWithAvailabilityIndicatorResponse) => {
 				expect(response.getMembers().length).toBe(1);
 
 				let members = response.getMembers();
