@@ -10,4 +10,4 @@ echo "Running pre-commit hook scripts"
 cd ${PROJPATH}
 
 echo "Running unit tests"
-.scripts/run_tests
+.scripts/test

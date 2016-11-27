@@ -25,6 +25,6 @@ done
 
 if [ ${test_now} = "y" ]; then
 
-    ${PROJPATH}/.scripts/run_tests
+    ${PROJPATH}/.scripts/test
 
 fi

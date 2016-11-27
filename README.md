@@ -18,7 +18,7 @@ You will need to install the node packages and then specify your API key. If you
     .scripts/install
 
 #### How to run tests ####
-    .scripts/run_tests
+    .scripts/test
 
 ### Contribution guidelines ###
 Anyone can contribute. Please send an email to josh.woodcock@opentimeapp.com to get access. All code should be cleanly written and follow the existing conventions anc code coverage level of the project. 
