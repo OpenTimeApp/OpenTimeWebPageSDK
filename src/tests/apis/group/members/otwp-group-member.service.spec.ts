@@ -1,6 +1,6 @@
 import {OTWPGroupMemberService} from "../../../../sdk/apis/group/members/otwp-group-member.service";
 import {TestHelper} from "../../../otwp-test-helper";
-import {OTWPGroupMembersWithAvailabilityIndicatorResponse} from "../../../../sdk/apis/group/members/get-with-availability/otwp-group-members-with-availability-indicator-response";
+import {OTWPGroupMembersWithAvailabilityIndicatorResponse} from "../../../../sdk/apis/group/members/get-with-availability-indicator/otwp-group-members-with-availability-indicator-response";
 
 describe('Class: OTWPGroupMemberService', () => {
 
