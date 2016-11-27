@@ -8,6 +8,9 @@ PROJPATH=$(dirname ${BASEPATH})
 
 cd ${PROJPATH}
 
+echo "Installing node modules"
+npm install
+
 echo "Installing scripts"
 find .scripts -type f -exec chmod +x {} \;
 

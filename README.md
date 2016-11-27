@@ -14,12 +14,11 @@ Get and API key by emailing Josh Woodcock <josh.woodcock@opentimeapp.com>. Insta
 You will need to install the node packages and then specify your API key. If you can run the the tests and they all pass then it was done correctly.
     
 #### Configuration ####
-    npm install
     chmod +x .scripts/install.sh 
     .scripts/install.sh
 
 #### How to run tests ####
-    npm test
+    .scripts/run_tests.sh
 
 ### Contribution guidelines ###
 Anyone can contribute. Please send an email to josh.woodcock@opentimeapp.com to get access. All code should be cleanly written and follow the existing conventions anc code coverage level of the project. 
