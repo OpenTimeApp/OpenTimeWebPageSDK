@@ -6,7 +6,7 @@ ABSPATH=$(realpath $0)
 BASEPATH=$(dirname ${ABSPATH})
 PROJPATH=$(dirname $(dirname ${BASEPATH}))
 
-cd ${PROJPATH}
+cd "${PROJPATH}"
 
 echo "Would you like to run the tests now?"
 echo -n "Type [y] or [n] then press [ENTER]: "
@@ -25,6 +25,6 @@ done
 
 if [ ${test_now} = "y" ]; then
 
-    ${PROJPATH}/.scripts/test
+    "${PROJPATH}/.scripts/test"
 
 fi

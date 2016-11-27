@@ -6,7 +6,7 @@ ABSPATH=$(realpath $0)
 BASEPATH=$(dirname ${ABSPATH})
 PROJPATH=$(dirname ${BASEPATH})
 
-cd ${PROJPATH}
+cd "${PROJPATH}"
 
 echo "Starting test server"
-${PROJPATH}/node_modules/karma/bin/karma start --single-run
+./node_modules/karma/bin/karma start --single-run

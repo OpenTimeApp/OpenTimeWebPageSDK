@@ -6,7 +6,7 @@ ABSPATH=$(realpath $0)
 BASEPATH=$(dirname ${ABSPATH})
 PROJPATH=$(dirname ${BASEPATH})
 
-cd ${PROJPATH}
+cd "${PROJPATH}"
 
 echo "Installing node modules"
 npm install
@@ -16,19 +16,21 @@ find .scripts -type f -not -path ".scripts/template/*" -exec chmod +x {} \;
 find .scripts -type d -exec chmod 775 {} \;
 
 echo "Installing development tools"
-${PROJPATH}/.scripts/include/install_dev_tools.sh
+"${PROJPATH}/.scripts/include/install_dev_tools.sh"
 
 echo "Ignoring changes for configuration files"
 git update-index --assume-unchanged src/tests/test-config.ts
 
 echo "Installing git hooks"
-cp ${PROJPATH}/.scripts/template/pre-commit ${PROJPATH}/.git/hooks/pre-commit
-chmod +x ${PROJPATH}/.git/hooks/pre-commit
+cp "${PROJPATH}/.scripts/template/pre-commit" "${PROJPATH}/.git/hooks/pre-commit"
+cp "${PROJPATH}/.scripts/template/post-merge" "${PROJPATH}/.git/hooks/post-merge"
+chmod +x "${PROJPATH}/.git/hooks/pre-commit"
+chmod +x "${PROJPATH}/.git/hooks/post-merge"
 
 echo "Configuring API"
-${PROJPATH}/.scripts/configure
+"${PROJPATH}/.scripts/configure"
 
 # Run tests
-${PROJPATH}/.scripts/include/run_tests_dialog.sh
+"${PROJPATH}/.scripts/include/run_tests_dialog.sh"
 
 echo "Installation complete!"

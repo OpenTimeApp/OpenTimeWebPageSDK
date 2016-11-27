@@ -32,11 +32,11 @@ if [ ${configure_now} = "y" ]; then
     read api_key
     clean_api_key="${api_key//[[:space:]]/}"
 
-    cp ${PROJPATH}/.scripts/template/test-config.ts ${PROJPATH}/.scripts/template/test-config.ts.tmp
+    cp "${PROJPATH}/.scripts/template/test-config.ts" "${PROJPATH}/.scripts/template/test-config.ts.tmp"
 
-    sed -i '' -e "s/{apiKey}/${clean_api_key}/g" ${PROJPATH}/.scripts/template/test-config.ts.tmp
+    sed -i '' -e "s/{apiKey}/${clean_api_key}/g" "${PROJPATH}/.scripts/template/test-config.ts.tmp"
 
-    mv ${PROJPATH}/.scripts/template/test-config.ts.tmp ${PROJPATH}/src/tests/test-config.ts
+    mv "${PROJPATH}/.scripts/template/test-config.ts.tmp" "${PROJPATH}/src/tests/test-config.ts"
 
     echo "API configured"
 
