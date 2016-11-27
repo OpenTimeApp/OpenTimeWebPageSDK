@@ -12,7 +12,7 @@ describe('Service: HttpAppRequest', () => {
 
 		it("should return doctors", (done) => {
 
-			httpService.getResponse('http://opentimeapp.com/doctors.php', 'GET', {
+			httpService.getResponse('https://opentimeapp.com/doctors.php', 'GET', {
 				'page': 1,
 				'rows': 5
 			}, (responseObject) => {
