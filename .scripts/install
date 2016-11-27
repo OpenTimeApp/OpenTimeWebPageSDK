@@ -13,7 +13,7 @@ npm install
 
 echo "Installing scripts"
 find .scripts -type f -not -path ".scripts/template/*" -exec chmod +x {} \;
-find .scripts -type d -not -path ".scripts/template/*" -exec chmod 775 {} \;
+find .scripts -type d -exec chmod 775 {} \;
 
 echo "Installing development tools"
 ${PROJPATH}/.scripts/include/install_dev_tools.sh
