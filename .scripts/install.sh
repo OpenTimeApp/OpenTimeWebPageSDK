@@ -8,6 +8,12 @@ PROJPATH=$(dirname ${BASEPATH})
 
 cd ${PROJPATH}
 
+echo "Installing scripts"
+find .scripts -type f -exec chmod +x {} \;
+
+echo "Installing development tools"
+${PROJPATH}/.scripts/install-dev-tools.sh
+
 echo "Ignoring changes for configuration files"
 git update-index --assume-unchanged src/tests/test-config.ts
 

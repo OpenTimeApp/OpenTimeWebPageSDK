@@ -8,4 +8,4 @@ PROJPATH=$(dirname ${BASEPATH})
 
 cd ${PROJPATH}
 
-karma start --single-run
+${PROJPATH}/node_modules/karma/bin/karma start --single-run
