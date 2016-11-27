@@ -1,5 +1,6 @@
 import {OpenTimeWebPageSDK} from "./opentime-webpage-sdk";
 import {HttpAppRequest} from "../libraries/http-app-request";
+import {OTWPConstant} from "./otwp-constant";
 
 export class OTWPRequest {
 
@@ -14,8 +15,10 @@ export class OTWPRequest {
 		let key = OpenTimeWebPageSDK.getService().getAPIKey();
 
 		if (key !== null && key !== '') {
-			this._request.setRequestHeader('API_KEY', OpenTimeWebPageSDK.getService().getAPIKey());
+			this._request.setRequestHeader(OTWPConstant.API_KEY_NAME, OpenTimeWebPageSDK.getService().getAPIKey());
 		}
+
+		this._request.setRequestHeader(OTWPConstant.API_VERSION_NAME, OTWPConstant.API_VERSION);
 
 		let url = OpenTimeWebPageSDK.getService().getEndpoint(api, apiMethod);
 

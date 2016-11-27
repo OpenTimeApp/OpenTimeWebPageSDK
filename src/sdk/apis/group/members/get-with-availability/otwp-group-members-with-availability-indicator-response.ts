@@ -7,14 +7,14 @@ export class OTWPGroupMembersWithAvailabilityIndicatorResponse extends OTWPRespo
 
 	constructor(rawData: any) {
 		super(rawData);
-		this._members = this._getDeserializeMembers(rawData.data);
+		this._members = OTWPGroupMembersWithAvailabilityIndicatorResponse._getDeserializeMembers(rawData.data);
 	}
 
 	public getMembers(): Array<OTWPDeserializedGroupMemberAvailability> {
 		return this._members;
 	}
 
-	private _getDeserializeMembers(rawMembers: Array<any>): Array<OTWPDeserializedGroupMemberAvailability> {
+	private static _getDeserializeMembers(rawMembers: Array<any>): Array<OTWPDeserializedGroupMemberAvailability> {
 		let deserializedMembers = [];
 		for (let i = 0; i < rawMembers.length; i++) {
 			let rawMember = rawMembers[i];

@@ -22,4 +22,8 @@ export class OTWPResponse {
 	public getDeveloperMessage(): string {
 		return this._developerMessage;
 	}
+
+	public getErrorMessages() : string {
+		return this.getMessage() + '. ' + this.getDeveloperMessage();
+	}
 }
