@@ -11,9 +11,8 @@ export class OTWPGroupMemberService {
 		let request = new OTWPRequest();
 		request.getResponse(
 			OTWPGroupMemberService.API,
-			'getMembersWithAvailabilityIndicator',
+			'getMembersWithAvailabilityIndicator/' + groupID,
 			'POST', {
-				group_id: groupID,
 				sort: 'asc',
 				query: '',
 				page: ''

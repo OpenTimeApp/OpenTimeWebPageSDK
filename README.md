@@ -24,7 +24,7 @@ You will need to install the node packages and then specify your API key. If you
 Anyone can contribute. Please send an email to josh.woodcock@opentimeapp.com to get access. All code should be cleanly written and follow the existing conventions anc code coverage level of the project. 
 
 #### Writing tests ####
-Tests should be full integration tests written in Jasmin
+Tests should be full integration tests written in Jasmine
 
 #### Code review ####
 All code is reviewed by other contributors of the repository.
