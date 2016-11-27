@@ -8,4 +8,5 @@ PROJPATH=$(dirname ${BASEPATH})
 
 cd ${PROJPATH}
 
+echo "Starting test server"
 ${PROJPATH}/node_modules/karma/bin/karma start --single-run

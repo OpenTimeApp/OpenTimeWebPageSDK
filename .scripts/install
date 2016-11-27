@@ -12,16 +12,22 @@ echo "Installing node modules"
 npm install
 
 echo "Installing scripts"
-find .scripts -type f -exec chmod +x {} \;
+find .scripts -type f -not -path ".scripts/template/*" -exec chmod +x {} \;
 
 echo "Installing development tools"
-${PROJPATH}/.scripts/install-dev-tools.sh
+${PROJPATH}/.scripts/include/install_dev_tools.sh
 
 echo "Ignoring changes for configuration files"
 git update-index --assume-unchanged src/tests/test-config.ts
 
 echo "Installing git hooks"
-cp ${PROJPATH}/.scripts/pre-commit ${PROJPATH}/.git/hooks/pre-commit
+cp ${PROJPATH}/.scripts/template/pre-commit ${PROJPATH}/.git/hooks/pre-commit
 chmod +x ${PROJPATH}/.git/hooks/pre-commit
+
+echo "Configuring API"
+${PROJPATH}/.scripts/configure
+
+# Run tests
+${PROJPATH}/.scripts/include/run_tests_dialog.sh
 
 echo "Installation complete!"

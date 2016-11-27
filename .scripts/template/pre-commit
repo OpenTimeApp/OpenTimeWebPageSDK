@@ -6,6 +6,8 @@ ABSPATH=$(realpath $0)
 BASEPATH=$(dirname ${ABSPATH})
 PROJPATH=$(dirname $(dirname ${BASEPATH}))
 
+echo "Running pre-commit hook scripts"
 cd ${PROJPATH}
 
-.scripts/run_tests.sh
+echo "Running unit tests"
+.scripts/run_tests
