@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "OpenTime Angular 2 SDK for WebPages",
+  "main": "src/sdk/main.ts",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
