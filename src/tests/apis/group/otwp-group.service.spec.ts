@@ -34,7 +34,7 @@ describe('Service: OTWPGroupService', () => {
           expect(group.getName()).toBe("The Oneders");
           expect(group.getType()).toBe(1);
           expect(group.getStatus()).toBe(1);
-          expect(group.getImage()).toBe("http://abc.123");
+          expect(group.getImage()).toBe("https://s3-us-west-2.amazonaws.com/test-opentime-group-images/abc.123");
           expect(group.getDescription()).toBe("The best band of all time");
 
         }
